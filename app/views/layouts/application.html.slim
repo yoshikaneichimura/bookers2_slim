@@ -10,4 +10,35 @@ html
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
+
+    header
+      nav
+        div.container
+          = link_to 'Bookers', root_path
+        button
+        div
+          ul
+            li
+              = link_to 'Home', root_path
+            - if user_signed_in?
+              li
+                = link_to 'Uers', users_path
+              li
+                = link_to 'Books', books_path
+              li
+                = link_to 'Log out', destroy_user_session_path, method: :delete
+            - else
+              li
+                = link_to 'About', home_about_path
+              li
+                = link_to 'Sign up', new_user_registration_path
+              li
+                = link_to 'Log in', new_user_session_path
+
     = yield
+
+    footer
+      div.container
+        div.row
+          div.mx-auto
+            p CopyRight Infratop.inc
