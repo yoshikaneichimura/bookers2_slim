@@ -1,2 +1,27 @@
-h1.text-danger Homes#top
-p Find me in app/views/homes/top.html.slim
+div.container
+  div.row
+    div.mx-auto
+      h1
+        |
+          welcome to
+        strong
+          |
+            Bookers
+        | !!
+      p
+        | In
+        strong
+          | Bookers
+        | ,
+
+      p
+        | you can share and exchange your opinions, inpressions,
+      p
+        | and emotions
+      p
+        | about various books!
+      div
+        div
+          = link_to 'Sign up', new_user_registration_path
+        div
+          = link_to 'Log in', new_user_session_path
