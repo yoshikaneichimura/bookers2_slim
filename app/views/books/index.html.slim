@@ -1,2 +1,27 @@
-h1 Books#index
-p Find me in app/views/books/index.html.slim
+div.container
+  div.row
+    div.col-md-3
+      h2 User info
+      table
+        tbody
+          tr
+          tr
+            th name
+            th
+          tr
+            th introduction
+            th
+      div
+        = link_to 'edit_user', edit_user_path(current_user)
+      h2 New book
+      = form_with model: @book_new, url: books_path, method: :post do |f|
+        div.form-group
+          label title
+          = f.text_field :title, class: "form-control"
+        div.form-group
+          label Opinion
+          = f.text_area :body, class: "form-control"
+        div.form-group
+          = f.submit "Create Book"
+
+    div.col-md-8.offset-md-1
