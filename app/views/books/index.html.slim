@@ -25,3 +25,20 @@ div.container
           = f.submit "Create Book"
 
     div.col-md-8.offset-md-1
+      h2 Books
+      table.table
+        thead
+          tr
+            th
+            th Title
+            th Body
+            th
+          - @books.each do |book|
+            tbody
+              tr
+                td  = link_to user_path(book.user.id) do
+                      = image_tag book.user.get_profile_image(100,100)
+                td = link_to book.title, book_path(book.id)
+                td = book.body
+                td
+
