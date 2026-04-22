@@ -62,6 +62,9 @@ html
                     =<
                     | Log in
                   end
+    - if flash[:notice]
+      p#notice
+        = flash[:notice]
 
     = yield
 
