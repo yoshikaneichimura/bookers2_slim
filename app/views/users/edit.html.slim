@@ -2,6 +2,16 @@ div.container
   div.row
     div.col-sm-12.col-md-8.col-lg-5.mx-auto
       h2 User info
+
+      - if @user.errors.any?
+        h3
+          = @user.errors.count
+          |  error prohibited this obj form being saved:
+        ul
+          - @user.errors.full_messages.each do |message|
+            li
+              = message
+
       = form_with model: @user do |f|
         div.form-group
           label for="user_name" Name
