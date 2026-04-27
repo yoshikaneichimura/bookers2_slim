@@ -1,4 +1,12 @@
 div.container
+  - if @book.errors.any?
+    h3
+      = @book.errors.count
+      |  errors prohibited this obj form being saved:
+    ul
+      - @book.errors.full_messages.each do |message|
+        li
+          = message
   div.row
     div.col-sm-12.col-md-8.col-lg-5.mx-auto
       h1 Editing book

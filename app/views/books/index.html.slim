@@ -1,4 +1,12 @@
 div.container
+  - if @book_new.errors.any?
+    h3
+      = @book_new.errors.count
+      |  errors prohibited this obj form being saved:
+    ul
+      - @book_new.errors.full_messages.each do |message|
+        li
+          = message
   div.row
     div.col-md-3
 
@@ -21,4 +29,3 @@ div.container
                 td = link_to book.title, book_path(book.id)
                 td = book.body
                 td
-
