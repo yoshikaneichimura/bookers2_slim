@@ -1,15 +1,16 @@
 h2 User info
-table
+table.table
   tbody
     tr
     tr
       th name
-      th 
+      th = user.name
     tr
       th introduction
-      th
+      th = user.introduction
 div
-  = link_to 'edit_user', edit_user_path(current_user)
+  - if user == current_user
+    = link_to 'edit_user', edit_user_path(current_user)
 h2 New book
 = form_with model: book_new, url: books_path, method: :post do |f|
   div.form-group
