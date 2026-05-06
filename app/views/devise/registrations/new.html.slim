@@ -27,5 +27,5 @@ div.container
           br
           = f.password_field :password_confirmation, autocomplete: "new-password"
         .actions
-          = f.submit "Sign up"
+          = f.submit "Sign up", class: "btn btn-sm btn-success"
       = render "devise/shared/links"

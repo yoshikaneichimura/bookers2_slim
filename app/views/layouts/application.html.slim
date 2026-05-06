@@ -68,14 +68,15 @@ html
                     =<
                     | Log in
                   end
-    - if flash[:notice]
-      p#notice
-        = flash[:notice]
+    main
+      - if flash[:notice]
+        p#notice
+      = flash[:notice]
 
-    = yield
+      = yield
 
     footer
-      div.container
+      div.container.mt-5
         div.row
           div.mx-auto
             p CopyRight Infratop.inc
