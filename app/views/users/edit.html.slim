@@ -1,6 +1,6 @@
-div.container
+div.container.mt-3
   div.row
-    div.col-sm-12.col-md-8.col-lg-5.mx-auto
+    div.col-sm-12.col-md-8.col-lg-5.px-5.px-sm-o.mx-auto
       h2 User info
 
       - if @user.errors.any?
@@ -23,4 +23,4 @@ div.container
           label for="user_introduction" Introduction
           = f.text_area :introduction, autoforcus: true, id: "user_introduction", class: "form-control"
         div.form-group
-          = f.submit "Update User"
+          = f.submit "Update User", class: "btn btn-secondary"
