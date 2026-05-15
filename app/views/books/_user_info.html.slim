@@ -10,10 +10,9 @@ table.table
       th introduction
       th = user.introduction
 div.row
-  - if user == current_user
-    = link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do
-      i.fas.fa-user-cog
-    end
+  = link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do
+    i.fas.fa-user-cog
+  end
 
 h2.mt-3 New book
 = form_with model: book_new, url: books_path, method: :post do |f|
